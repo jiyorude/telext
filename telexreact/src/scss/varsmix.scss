@@ -1,0 +1,51 @@
+// Variables and Mixins
+
+$telfont: EuropeanTeletext;
+$white: #ffffff;
+$red: #ff0000;
+$green: #00ff06;
+$yellow: #fffc00;
+$blue: #0023ff;
+$lightblue: #00fff0;
+
+@mixin next {
+    font-family: $telfont;
+    color: $red;
+    text-transform: uppercase;
+};
+
+@mixin news {
+    font-family: $telfont;
+    color: $green;
+    text-transform: uppercase;
+}
+
+@mixin index {
+    font-family: $telfont;
+    color: $yellow;
+    text-transform: uppercase;
+}
+
+@mixin sport {
+    font-family: $telfont;
+    color: $lightblue;
+    text-transform: uppercase;
+}
+
+@mixin txtwhite {
+    font-family: $telfont;
+    color: $white;
+    text-transform: uppercase;
+}
+
+@mixin txtyellow {
+    font-family: $telfont;
+    color: $yellow;
+    text-transform: uppercase;
+}
+
+@mixin txtblue {
+    font-family: $telfont;
+    color: $lightblue;
+    text-transform: uppercase;
+}
