@@ -16,11 +16,24 @@ const WorldClock = () => {
   const amsterdamTop = moment.tz(time, "Europe/Amsterdam").format("HH:mm:ss");
   const honolulu = moment.tz(time, "Pacific/Honolulu").format("HH:mm");
   const taipei = moment.tz(time, "Asia/Taipei").format("HH:mm");
-  const istanbul = moment.tz(time, "Asia/Istanbul").format("HH:mm")
+  const istanbul = moment.tz(time, "Asia/Istanbul").format("HH:mm");
   const nairobi = moment.tz(time, "Africa/Nairobi").format("HH:mm");
   const auckland = moment.tz(time, "Pacific/Auckland").format("HH:mm");
   const kyiv = moment.tz(time, "Europe/Kyiv").format("HH:mm");
-  
+  const rio = moment.tz(time, "Brazil/East").format("HH:mm");
+  const johannesburg = moment.tz(time, "Africa/Johannesburg").format("HH:mm");
+  const addis = moment.tz(time, "Africa/Addis_Ababa").format("HH:mm");
+  const singapore = moment.tz(time, "Asia/Singapore").format("HH:mm");
+  const london = moment.tz(time, "Europe/London").format("HH:mm");
+  const jakarta = moment.tz(time, "Asia/Jakarta").format("HH:mm");
+  const moscow = moment.tz(time, "Europe/Moscow").format("HH:mm");
+  const losang = moment.tz(time, "America/Los_Angeles").format("HH:mm");
+  const washington = moment.tz(time, "US/Eastern").format("HH:mm");
+  const bangkok = moment.tz(time, "Asia/Bangkok").format("HH:mm");
+  const jerusalem = moment.tz(time, "Asia/Jerusalem").format("HH:mm");
+  const dubai = moment.tz(time, "Asia/Dubai").format("HH:mm");
+  const lisbon = moment.tz(time, "Europe/Lisbon").format("HH:mm");
+
   useEffect(() => {
     setInterval(() => {
       setTime(new Date());
@@ -80,19 +93,19 @@ const WorldClock = () => {
               <div className="time">{nairobi}</div>
               <div className="time">{auckland}</div>
               <div className="time">{kyiv}</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
+              <div className="time">{rio}</div>
+              <div className="time">{johannesburg}</div>
+              <div className="time">{addis}</div>
+              <div className="time">{singapore}</div>
+              <div className="time">{london}</div>
+              <div className="time">{jakarta}</div>
+              <div className="time">{moscow}</div>
+              <div className="time">{losang}</div>
+              <div className="time">{washington}</div>
+              <div className="time">{bangkok}</div>
+              <div className="time">{jerusalem}</div>
+              <div className="time">{dubai}</div>
+              <div className="time">{lisbon}</div>
             </div>
             <div className="citiesright">
               <div className="txtwhite">Rome</div>
