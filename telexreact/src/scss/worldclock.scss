@@ -2,7 +2,122 @@
 @import "./fonts.scss";
 @import "./varsmix.scss";
 
-h1 {
-    @include txtblue;
+.backgroundwrapper {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: black;
+    overflow: hidden;
+}
 
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    width: 90.5%;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 4.7vw;
+
+}
+
+.rowTwo {
+    width: 100%;
+    border: 2px solid orange;
+    display: flex;
+    justify-content: center;
+}
+
+.teltexttop {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 1vh;
+}
+
+.headerblock {
+    background-color: $blue;
+    height: 7vw;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.regularspan {
+    @include txtwhite;
+   
+    font-size: 1.5vw;
+    border: 2px solid white;
+}
+
+.emptyspan {
+    width: 6vw;
+    border: 2px solid yellow;
+}
+
+.longemptyspan {
+    width: 27vw;
+    border: 2px solid red;
+}
+
+.datespan {
+    @include txtwhite;
+    font-size: 1.5vw;
+    bordeR: 2px solid white;
+    width: 15vw;
+    text-align: right;
+}
+
+.timespan {
+    @include txtblue;
+    font-size: 1.5vw;
+    width: 13vw;
+    border: 2px solid white;
+    text-align: right;
+}
+
+h1 {
+    @include txtyellow;
+    font-size: 7vw;
+    letter-spacing: 3.9vw;
+    border: 2px solid red;
+    position: relative;
+    width: 98%;
+    margin-left: 0.5vw;
+}
+
+.contentblock {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid pink;
+    margin-top: 20px;
+    height: 75vh;
+    width: calc(100vw - 0.5vw);
+}
+
+.citiesleft {
+    height: 100%;
+    border: 2px solid red;
+    width: 25%
+}
+
+.timeleft {
+    height: 100%;
+    border: 2px solid yellow;
+    width: 25%;
+}
+
+.citiesright {
+    height: 100%;
+    border: 2px solid green;
+    width: 25%;
+}
+
+.timeright {
+    height: 100%;
+    border: 2px solid lightblue;
+    width: 25%;
 }
