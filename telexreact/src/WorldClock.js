@@ -1,6 +1,32 @@
 import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import moment from "moment-timezone";
 
 const WorldClock = () => {
+  const [time, setTime] = useState("");
+
+  let date = new Date();
+  let day = date.getDate();
+  let month = date.toLocaleString("default", { month: "short" });
+  let year = date.getFullYear();
+  let today = `${day} ${month} ${year}`;
+
+  const amsterdam = moment.tz(time, "Europe/Amsterdam").format("HH:mm");
+  const amsterdamTop = moment.tz(time, "Europe/Amsterdam").format("HH:mm:ss");
+  const honolulu = moment.tz(time, "Pacific/Honolulu").format("HH:mm");
+  const taipei = moment.tz(time, "Asia/Taipei").format("HH:mm");
+  const istanbul = moment.tz(time, "Asia/Istanbul").format("HH:mm")
+  const nairobi = moment.tz(time, "Africa/Nairobi").format("HH:mm");
+  const auckland = moment.tz(time, "Pacific/Auckland").format("HH:mm");
+  const kyiv = moment.tz(time, "Europe/Kyiv").format("HH:mm");
+  
+  useEffect(() => {
+    setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+  });
+
   return (
     <div className="backgroundwrapper">
       <div className="flexwrapper">
@@ -13,9 +39,9 @@ const WorldClock = () => {
               <span className="emptyspan"></span>
               <span className="regularspan">694</span>
               <span className="longemptyspan"></span>
-              <span className="datespan">MON 23 JAN</span>
+              <span className="datespan">{today}</span>
               <span className="emptyspan"></span>
-              <span className="timespan">11:49:00</span>
+              <span className="timespan">{amsterdamTop}</span>
             </div>
           </div>
           <div className="rowTwo">
@@ -47,13 +73,13 @@ const WorldClock = () => {
               <div className="txtwhite">Lisbon</div>
             </div>
             <div className="timeleft">
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
-              <div className="time">00:00</div>
+              <div className="time">{amsterdam}</div>
+              <div className="time">{honolulu}</div>
+              <div className="time">{taipei}</div>
+              <div className="time">{istanbul}</div>
+              <div className="time">{nairobi}</div>
+              <div className="time">{auckland}</div>
+              <div className="time">{kyiv}</div>
               <div className="time">00:00</div>
               <div className="time">00:00</div>
               <div className="time">00:00</div>
