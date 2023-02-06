@@ -121,3 +121,15 @@ h1 {
     border: 2px solid lightblue;
     width: 25%;
 }
+
+.txtyellow {
+    @include txtyellow;
+}
+
+.txtwhite {
+    @include txtwhite;
+}
+
+.time {
+    @include txtblue;
+}
