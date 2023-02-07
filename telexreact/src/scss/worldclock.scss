@@ -2,14 +2,6 @@
 @import "./fonts.scss";
 @import "./varsmix.scss";
 
-.fade-in {
-    opacity: 1;
-    transition: 2s linear;
-}
-
-.invalid-date {
-    display: none;
-}
 
 .backgroundwrapper {
     min-width: 100vw;

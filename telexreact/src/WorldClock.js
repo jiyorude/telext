@@ -5,23 +5,13 @@ import moment from "moment-timezone";
 
 const WorldClock = () => {
   const [time, setTime] = useState("");
-  const [showElements, setShowElements] = useState(false);
-
-    useEffect(() => {
-      setTimeout(() => {
-        setShowElements(true);
-      }, 2000);
-    }, []);
-  
-    if (!time.isValid()) {
-      console.log(`<div class="invalid-date">INVALID DATE</div>`);
-    }
 
   let date = new Date();
   let day = date.getDate();
   let month = date.toLocaleString("default", { month: "short" });
   let year = date.getFullYear();
   let today = `${day} ${month} ${year}`;
+
 
   const amsterdam = moment.tz(time, "Europe/Amsterdam").format("HH:mm");
   const amsterdamTop = moment.tz(time, "Europe/Amsterdam").format("HH:mm:ss");
@@ -66,11 +56,11 @@ const WorldClock = () => {
   const seoul = moment.tz(time, "Asia/Seoul").format("HH:mm");
   const sydney = moment.tz(time, "Australia/Sydney").format("HH:mm");
 
-  useEffect(() => {
-    setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-  });
+   useEffect(() => {
+     setInterval(() => {
+       setTime(new Date());
+     }, 1);
+   });
 
   return (
     <div className="backgroundwrapper">
@@ -84,7 +74,7 @@ const WorldClock = () => {
               <span className="emptyspan"></span>
               <span className="regularspan">694</span>
               <span className="longemptyspan"></span>
-              <span className={`datespan ${showElements ? "fade-in" : ""}`}>{today}</span>
+              <span className="datespan">{today}</span>
               <span className="emptyspan"></span>
               <span className="timespan">{amsterdamTop}</span>
             </div>
@@ -118,26 +108,26 @@ const WorldClock = () => {
               <div className="txtwhite">Lisbon</div>
             </div>
             <div className="timeleft">
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{amsterdam}</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{honolulu}</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{taipei}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{istanbul}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{nairobi}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{auckland}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{kyiv}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{rio}</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{johannesburg}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{addis}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{singapore}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{london}</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{jakarta}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{moscow}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{losang}</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{washington}</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{bangkok}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{jerusalem}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{dubai}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{lisbon}</div>
+              <div className="time">{amsterdam}</div>
+              <div className="time">{honolulu}</div>
+              <div className="time">{taipei}+</div>
+              <div className="time">{istanbul}+</div>
+              <div className="time">{nairobi}+</div>
+              <div className="time">{auckland}+</div>
+              <div className="time">{kyiv}+</div>
+              <div className="time">{rio}</div>
+              <div className="time">{johannesburg}+</div>
+              <div className="time">{addis}+</div>
+              <div className="time">{singapore}+</div>
+              <div className="time">{london}</div>
+              <div className="time">{jakarta}+</div>
+              <div className="time">{moscow}+</div>
+              <div className="time">{losang}</div>
+              <div className="time">{washington}</div>
+              <div className="time">{bangkok}+</div>
+              <div className="time">{jerusalem}+</div>
+              <div className="time">{dubai}+</div>
+              <div className="time">{lisbon}</div>
             </div>
             <div className="citiesright">
               <div className="txtwhite">Rome</div>
@@ -162,26 +152,26 @@ const WorldClock = () => {
               <div className="txtwhite">Sydney</div>
             </div>
             <div className="timeright">
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{rome}</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{edmonton}</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{mexico}</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{beijing}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{pago}</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{melbourne}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{delhi}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{helsinki}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{reyk}</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{NYC}</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{baghdad}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{buenosAires}</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{hongKong}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{shanghai}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{tokyo}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{adelaide}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{kualaLumpur}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{southPole}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{seoul}+</div>
-              <div className={`time ${showElements ? 'fade-in' : ''}`}>{sydney}+</div>
+              <div className="time">{rome}</div>
+              <div className="time">{edmonton}</div>
+              <div className="time">{mexico}</div>
+              <div className="time">{beijing}+</div>
+              <div className="time">{pago}</div>
+              <div className="time">{melbourne}+</div>
+              <div className="time">{delhi}+</div>
+              <div className="time">{helsinki}+</div>
+              <div className="time">{reyk}</div>
+              <div className="time">{NYC}</div>
+              <div className="time">{baghdad}+</div>
+              <div className="time">{buenosAires}</div>
+              <div className="time">{hongKong}+</div>
+              <div className="time">{shanghai}+</div>
+              <div className="time">{tokyo}+</div>
+              <div className="time">{adelaide}+</div>
+              <div className="time">{kualaLumpur}+</div>
+              <div className="time">{southPole}+</div>
+              <div className="time">{seoul}+</div>
+              <div className="time">{sydney}+</div>
             </div>
           </div>
         </header>
