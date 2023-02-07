@@ -1,6 +1,8 @@
 <img src="other/telexReactLogo.png" alt="telexReact Logo">
 
-### Classic Teletext World Clock made in React
+<h3 align="center">Classic Teletext World Clock made in React</h3>
+
+---
 
 #### Terms of Use
 
