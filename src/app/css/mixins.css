@@ -1,0 +1,25 @@
+/* Text-based Mixins*/
+.mxTxtWhite {
+    @apply font-telexFont text-telexWhite uppercase;
+};
+
+.mxTxtRed {
+    @apply font-telexFont text-telexRed uppercase;
+};
+
+.mxTxtGreen {
+    @apply font-telexFont text-telexGreen uppercase;
+};
+
+.mxTxtYellow {
+    @apply font-telexFont text-telexYellow uppercase;
+};
+
+.mxTxtBlue {
+    @apply font-telexFont text-telexBlue uppercase;
+};
+
+.mxTxtLightBlue {
+    @apply font-telexFont text-telexLightBlue uppercase;
+};
+

@@ -1,4 +1,4 @@
-### Telex
+### Telext
 Teletext World Clock built in Next.js
 
 <br>
