@@ -15,9 +15,11 @@ const WorldClock: React.FC = () => {
   });
 
   useEffect(() => {
+    setCurrentTime(moment().tz('Europe/Amsterdam').format("HH:mm:ss"));
     const interval = setInterval(() => {
       setCurrentTime(moment().tz('Europe/Amsterdam').format("HH:mm:ss")); 
     }, 1000);
+  
     return () => clearInterval(interval);
   }, []);
 
@@ -45,7 +47,7 @@ const WorldClock: React.FC = () => {
           <span className='mxTxtWhite'>{currentDate}</span>
           <span className='mxTxtLightBlue' suppressHydrationWarning={true}>{currentTime}</span>
         </section>
-        <section className='h-36 bg-telexBlue flex items-center justify-center'>
+        <section className='h-32 bg-telexBlue flex items-center justify-center'>
           <h1 className='mxTxtYellow text-8xl px-16 flex justify-around w-full'>
             {'WORLDCLOCK'.split('').map((char, index) =>
             char === ' ' ? <span key={index}>&nbsp;</span> : <span key={index}>{char}</span>
@@ -53,14 +55,17 @@ const WorldClock: React.FC = () => {
           </h1>
         </section>
       </header>
-      <main className='container border border-white grid grid-cols-2 text-center'>
+      <main className='container border pt-4 pb-2 border-white grid grid-cols-2'>
         {Object.entries(timezones).map(([city, time]) => (
-            <div key={city} className='text-lg mxTxtWhite'>
-              <span>{city} </span>
+            <div key={city} className='text-lg mxTxtWhite flex justify-between px-28'>
+              <span>{city}</span>
               <span className='mxTxtLightBlue'>{time}</span>
             </div>
           ))}
       </main>
+      <footer className='container border border-white'>
+        <section className='stripe'></section>
+      </footer>
     </section>
   );
 };

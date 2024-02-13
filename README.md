@@ -1,5 +1,14 @@
 ### Telext
-Mobile-first Teletext World Clock
+Classic Teletext World Clock
 
-<br>
-Lorem Ipsum Dolar Sit Amet
+Created by Jordy Veenstra (A Pixelated Point of View)
+<br/>Licensed under MIT
+
+<br/>
+
+#### Live Demo
+A live environment containing Telext can be accessed [here](https://telext.vercel.app/)
+
+<br/>
+
+#### 
