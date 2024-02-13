@@ -1,15 +1,13 @@
-/* Import statements CSS */
-@import url("./reset.css");
 @import url("./mixins.css");
-@import url("./telext.css");
-
-/* Import statements Tailwind*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Globally applied CSS */
 @font-face {
     font-family: European-Teletext;
     src: url("/fonts/EuropeanTeletext.woff") format("woff");
+}
+
+* {
+    @apply p-0 m-0 box-border;
 }
