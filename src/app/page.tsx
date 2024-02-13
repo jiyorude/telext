@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment-timezone';
 import { places } from '@/api/places';
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const WorldClock: React.FC = () => {
   const [timezones, setTimezones] = useState<{ [key: string]: string }>({});
@@ -47,29 +46,28 @@ const WorldClock: React.FC = () => {
           <span className='mxTxtLightBlue' suppressHydrationWarning={true}>{currentTime}</span>
         </section>
         <section className='h-28 bg-telexBlue flex items-center justify-center'>
-          <h1 className='mxTxtYellow text-8xl px-16 flex justify-around w-full'>
+          <h1 role="button" tabIndex={0} aria-label='World Clock' className='mxTxtYellow text-8xl px-16 flex justify-around w-full'>
             {'WorldClock'.split('').map((char, index) =>
             char === ' ' ? <span key={index}>&nbsp;</span> : <span key={index}>{char}</span>
             )}
           </h1>
         </section>
       </header>
-      <main className='container border pt-4 pb-6 border-white grid grid-cols-2'>
+      <main className='container pt-4 pb-6  grid grid-cols-2'>
         {Object.entries(timezones).map(([city, time]) => (
             <div key={city} className='text-lg mxTxtWhite flex justify-between px-28'>
-              <span>{city}</span>
-              <span className='mxTxtLightBlue'>{time}</span>
+              <span role='button' className='cursor-default' tabIndex={0}>{city}</span>
+              <span role='button' tabIndex={0} className='mxTxtLightBlue cursor-default' aria-live='polite'>{time}</span>
             </div>
           ))}
       </main>
-      <footer className='container border border-white w-full flex justify-center'>
-        <section className='stripe'>
-          <section className='flex p-2 justify-between border border-white'>
-            <span className='mxTxtRed'>Next</span>
-            <span className='mxTxtGreen'>News</span>
-            <span className='mxTxtBlue'>Index</span>
-            <span className='mxTxtLightBlue'>Sport</span>
-
+      <footer className='container flex justify-center'>
+        <section className='stripe w-full'>
+          <section className='flex mt-2.5 p-2 justify-between px-28 text-lg '>
+            <span className='mxTxtRed hover:cursor-pointer' role="button" tabIndex={0} aria-label="Button that says 'Next'">Next</span>
+            <span className='mxTxtGreen hover:cursor-pointer' role="button" tabIndex={0} aria-label="Button that says 'News'">News</span>
+            <span className='mxTxtYellow hover:cursor-pointer' role="button" tabIndex={0} aria-label="Button that says 'Index'">Index</span>
+            <span className='mxTxtLightBlue hover:cursor-pointer' role="button" tabIndex={0} aria-label="Button that says 'Sport'">Sport</span>
           </section>
         </section>
       </footer>

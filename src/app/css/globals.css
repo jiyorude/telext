@@ -13,5 +13,5 @@
 }
 
 .stripe {
-    @apply w-10/12 h-2 bg-telexYellow;
+    @apply h-1 bg-telexBlue;
 }
