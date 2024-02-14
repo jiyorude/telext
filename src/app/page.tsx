@@ -40,26 +40,26 @@ const WorldClock: React.FC = () => {
   }
 
   return (
-    <section className='bg-black select-none flex flex-col items-center h-dvh lg:h-screen w-screen overflow-hidden'>
+    <section className='bg-black select-none flex flex-col items-center h-screen w-screen overflow-hidden'>
       <header className='container '>
-        <section className='py-4 px-8 flex items-center justify-between text-2xl'>
+        <section className='py-4 px-4 md:px-8 flex items-center justify-between text-xs md:text-lg lg:text-2xl'>
           <span className='mxTxtWhite'>P694</span>
           <span className='mxTxtWhite'>APPOV</span>
-          <span className='mxTxtWhite pr-72'>694</span>
+          <span className='mxTxtWhite pr-8 md:pr-36 lg:pr-72'>694</span>
           <span className='mxTxtWhite'>{currentDate}</span>
           <span className='mxTxtLightBlue' suppressHydrationWarning={true}>{currentTime}</span>
         </section>
-        <section className='h-28 bg-telexBlue flex items-center justify-center'>
-          <h1 role="button" tabIndex={0} aria-label='World Clock' className='mxTxtYellow text-8xl px-16 flex justify-around w-full'>
+        <section className='md:h-28 h-20 bg-telexBlue flex items-center justify-center'>
+          <h1 role="button" tabIndex={0} aria-label='World Clock' className='mxTxtYellow text-[46px] md:text-[90px] lg:text-8xl px-16 flex justify-around w-full'>
             {'WorldClock'.split('').map((char, index) =>
             char === ' ' ? <span key={index}>&nbsp;</span> : <span key={index}>{char}</span>
             )}
           </h1>
         </section>
       </header>
-      <main className='container pt-4 pb-6  grid grid-cols-2'>
+      <main className='container pt-4 pb-6 grid grid-cols-2'>
         {Object.entries(timezones).map(([city, time]) => (
-            <div key={city} className='text-lg mxTxtWhite flex justify-between px-28'>
+            <div key={city} className='text-[11.5px] py-1.5 md:text-lg mxTxtWhite flex justify-between px-3 md:py-0 md:px-4 lg:px-28'>
               <span role='button' className='cursor-default' tabIndex={0}>{city}</span>
               <span role='button' tabIndex={0} className='mxTxtLightBlue cursor-default' aria-live='polite'>{time}</span>
             </div>
@@ -67,7 +67,7 @@ const WorldClock: React.FC = () => {
       </main>
       <footer className='container flex justify-center'>
         <section className='stripe w-full'>
-          <section className='flex mt-2.5 p-2 justify-between px-28 text-lg '>
+          <section className='flex mt-2.5 p-2 justify-between gap-10 text-[10px]md:text-lg px-4'>
             <span className='mxTxtRed hover:cursor-pointer' role="button" tabIndex={0} aria-label="Button that says 'Next'">Next</span>
             <span className='mxTxtGreen hover:cursor-pointer' role="button" tabIndex={0} aria-label="Button that says 'News'">News</span>
             <span className='mxTxtYellow hover:cursor-pointer' role="button" tabIndex={0} aria-label="Button that says 'Index'">Index</span>
