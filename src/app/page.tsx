@@ -5,7 +5,7 @@ import { places } from '@/api/places';
 
 const WorldClock: React.FC = () => {
   const [timezones, setTimezones] = useState<{ [key: string]: string }>({});
-  const [currentTime, setCurrentTime] = useState('');
+  const [currentTime, setCurrentTime] = useState(moment.tz('Europe/Amsterdam').format("HH:mm:ss"))
   const [currentDate] = useState(() => {
     const now = new Date();
     const day = now.getDate();
