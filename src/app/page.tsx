@@ -5,7 +5,7 @@ import { places } from '@/api/places';
 
 const WorldClock: React.FC = () => {
   const [timezones, setTimezones] = useState<{ [key: string]: string }>({});
-  const [currentTime, setCurrentTime] = useState(moment.tz('Europe/Amsterdam').format("HH:mm:ss"))
+  const [currentTime, setCurrentTime] = useState<string | null>(null);
   const [currentDate] = useState(() => {
     const now = new Date();
     const day = now.getDate();
@@ -15,8 +15,9 @@ const WorldClock: React.FC = () => {
   });
 
   useEffect(() => {
+    setCurrentTime(moment.tz('Europe/Amsterdam').format("HH:mm:ss"));
     const interval = setInterval(() => {
-      setCurrentTime(moment.tz('Europe/Amsterdam').format("HH:mm:ss")); 
+      setCurrentTime(moment.tz('Europe/Amsterdam').format("HH:mm:ss"));
     }, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -24,16 +25,19 @@ const WorldClock: React.FC = () => {
   useEffect(() => {
     const updateTimes = () => {
       const currTime = places.reduce((acc, { city, timezone }) => {
-        acc[city] = moment().tz(timezone).format("HH:mm");
+        acc[city] = moment.tz(timezone).format("HH:mm");
         return acc;
       }, {} as { [key: string]: string });
-
       setTimezones(currTime);
     };
-    updateTimes(); 
-    const interval = setInterval(updateTimes, 1000); 
+    updateTimes();
+    const interval = setInterval(updateTimes, 1000);
     return () => clearInterval(interval);
   }, []);
+
+  if (!currentTime) {
+    return <div className='w-screen h-dvh bg-black lg:h-screen flex justify-center items-center text-2xl mxTxtLightBlue'>Loading...</div>;
+  }
 
   return (
     <section className='bg-black select-none flex flex-col items-center h-dvh lg:h-screen w-screen overflow-hidden'>
